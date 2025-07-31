@@ -34,9 +34,9 @@ const Navbar = () => {
       isScrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container-max">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 px-4 py-2">
           <div className="text-xl font-bold text-primary-400">
-            Portfolio
+            Logo
           </div>
 
           {/* Desktop Navigation */}
