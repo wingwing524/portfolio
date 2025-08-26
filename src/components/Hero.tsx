@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail, Phone, Download, Eye } from 'lucide-react'
+import { ArrowDown, Download, Eye } from 'lucide-react'
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -27,7 +27,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+    <section id="home" className="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       <div className="container mx-auto px-6 text-center z-10 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,10 +59,17 @@ const Hero = () => {
           
           {/* Main Name */}
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 bg-gradient-to-r from-primary-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
+            style={{
+              background: 'linear-gradient(135deg, #ffffff, #60a5fa, #a855f7)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              textShadow: '0 0 30px rgba(96, 165, 250, 0.3)'
+            }}
           >
             Yam Ho Wing, Isaac
           </motion.h1>
@@ -79,42 +86,56 @@ const Hero = () => {
           
           {/* Decorative Line */}
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-primary-400 to-blue-600 mx-auto mb-8 rounded-full"
+            className="w-32 h-1 mx-auto mb-8 rounded-full relative"
             initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 96, opacity: 1 }}
+            animate={{ width: 128, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-          />
+            style={{
+              background: 'linear-gradient(90deg, #60a5fa, #a855f7, #ec4899)',
+              boxShadow: '0 0 20px rgba(96, 165, 250, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2)'
+            }}
+          >
+            {/* Animated glow effect */}
+            <div 
+              className="absolute inset-0 rounded-full opacity-50 animate-pulse"
+              style={{
+                background: 'linear-gradient(90deg, #60a5fa, #a855f7, #ec4899)',
+                filter: 'blur(8px)'
+              }}
+            />
+          </motion.div>
           
           {/* Description */}
           <motion.p 
-            className="text-lg md:text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className="text-primary-400 font-semibold">Experienced Full Stack Developer</span> with expertise in the complete software development lifecycle. 
-            I specialize in building professional web applications, particularly in the healthcare industry, 
-            with strong skills in system architecture design, database schema development, and client communication.
+            <span className="text-primary-400 font-semibold">Business-minded developer</span> specializing in healthcare solutions and full-stack web applications.
           </motion.p>
 
           {/* Skills Highlight Cards */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8 text-sm"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto mb-8 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-4 text-center hover:border-primary-400/50 transition-all duration-300">
-              <div className="text-primary-400 font-bold text-lg">Full Lifecycle</div>
-              <div className="text-gray-400">Requirements to Deployment</div>
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-lg p-3 md:p-4 text-center hover:border-gray-500/70 hover:bg-gray-800/70 transition-all duration-300 group">
+              <div className="text-xl md:text-2xl mb-2">⚡</div>
+              <div className="text-gray-200 font-semibold text-sm md:text-base mb-1">Fast Delivery</div>
+              <div className="text-gray-400 text-xs md:text-sm">Quality solutions on time</div>
             </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-4 text-center hover:border-blue-400/50 transition-all duration-300">
-              <div className="text-blue-400 font-bold text-lg">Client Focus</div>
-              <div className="text-gray-400">Meeting & Project Management</div>
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-lg p-3 md:p-4 text-center hover:border-gray-500/70 hover:bg-gray-800/70 transition-all duration-300 group">
+              <div className="text-xl md:text-2xl mb-2">🎯</div>
+              <div className="text-gray-200 font-semibold text-sm md:text-base mb-1">Business Focused</div>
+              <div className="text-gray-400 text-xs md:text-sm">Solutions that drive results</div>
             </div>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-4 text-center hover:border-purple-400/50 transition-all duration-300">
-              <div className="text-purple-400 font-bold text-lg">Healthcare</div>
-              <div className="text-gray-400">Professional Applications</div>
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/50 rounded-lg p-3 md:p-4 text-center hover:border-gray-500/70 hover:bg-gray-800/70 transition-all duration-300 group sm:col-span-2 md:col-span-1">
+              <div className="text-xl md:text-2xl mb-2">🏥</div>
+              <div className="text-gray-200 font-semibold text-sm md:text-base mb-1">Healthcare Expert</div>
+              <div className="text-gray-400 text-xs md:text-sm">Specialized knowledge</div>
             </div>
           </motion.div>
           
@@ -127,69 +148,41 @@ const Hero = () => {
           >
             <button 
               onClick={scrollToProjects}
-              className="group relative px-8 py-4 bg-gradient-to-r from-primary-500 to-blue-600 hover:from-primary-600 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 min-w-[180px] justify-center"
+              className="group relative px-8 py-4 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2 min-w-[180px] justify-center overflow-hidden cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899)',
+                boxShadow: '0 10px 25px rgba(59, 130, 246, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)'
+              }}
             >
-              <Eye size={20} />
-              <span>View My Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              {/* Animated background overlay */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: 'linear-gradient(135deg, #60a5fa, #a855f7, #f472b6)',
+                }}
+              />
+              
+              {/* Button content */}
+              <div className="relative z-10 flex items-center gap-2">
+                <Eye size={20} />
+                <span>View My Work</span>
+              </div>
+              
+              {/* Glow effect */}
+              <div 
+                className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-300 blur-xl"
+                style={{
+                  background: 'linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899)',
+                }}
+              />
             </button>
             <button 
               onClick={downloadCV}
-              className="group relative px-8 py-4 bg-transparent border-2 border-gray-600 hover:border-primary-400 text-gray-300 hover:text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 min-w-[180px] justify-center hover:bg-gray-800/50"
+              className="group relative px-8 py-4 bg-transparent border-2 border-gray-600 hover:border-primary-400 text-gray-300 hover:text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 min-w-[180px] justify-center hover:bg-gray-800/50 cursor-pointer"
             >
               <Download size={20} />
               <span>Download CV</span>
             </button>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div 
-            className="flex justify-center items-center gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
-            <div className="flex items-center gap-4">
-              <span className="text-gray-400 text-sm hidden sm:block">Connect with me:</span>
-              <div className="flex gap-4">
-                <a 
-                  href="https://github.com/wingwing524" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative p-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/50 hover:border-primary-400/50 rounded-lg text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110"
-                  title="GitHub Profile"
-                >
-                  <Github size={24} />
-                  <div className="absolute inset-0 bg-primary-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/ho-wing-yam-isaac-191961234/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group relative p-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/50 hover:border-blue-400/50 rounded-lg text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
-                  title="LinkedIn Profile"
-                >
-                  <Linkedin size={24} />
-                  <div className="absolute inset-0 bg-blue-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a 
-                  href="mailto:howingyam0350@gmail.com" 
-                  className="group relative p-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/50 hover:border-green-400/50 rounded-lg text-gray-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110"
-                  title="Send Email - Recommended to use Outlook"
-                >
-                  <Mail size={24} />
-                  <div className="absolute inset-0 bg-green-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a 
-                  href="tel:67973767" 
-                  className="group relative p-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/50 hover:border-purple-400/50 rounded-lg text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110"
-                  title="Call: 67973767"
-                >
-                  <Phone size={24} />
-                  <div className="absolute inset-0 bg-purple-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-              </div>
-            </div>
           </motion.div>
         </motion.div>
       </div>

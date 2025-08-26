@@ -78,8 +78,8 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="section-padding bg-gray-800">
-      <div className="container-max">
+    <section id="projects" className="h-screen flex items-center justify-center bg-gray-800 overflow-y-auto">
+      <div className="container mx-auto px-6 max-w-7xl py-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
