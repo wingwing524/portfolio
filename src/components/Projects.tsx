@@ -4,13 +4,29 @@ import { useRef, useState } from 'react'
 import { ExternalLink, Github } from 'lucide-react'
 import ProjectDetail from './ProjectDetail'
 
+interface DetailedProject {
+  id: string
+  title: string
+  subtitle: string
+  icon: string
+  description: string
+  fullDescription: string
+  technologies: string[]
+  features: string[]
+  challenges: string[]
+  outcomes: string[]
+  duration: string
+  teamSize: string
+  role: string
+}
+
 const Projects = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [selectedProject, setSelectedProject] = useState<DetailedProject | null>(null)
 
   // Detailed project data for the two featured projects
-  const detailedProjects = [
+  const detailedProjects: DetailedProject[] = [
     {
       id: 'iot-inventory',
       title: 'IoT Inventory Management',

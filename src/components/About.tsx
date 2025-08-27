@@ -4,10 +4,26 @@ import { useRef, useState } from 'react'
 import { Code, Users, Briefcase, Globe } from 'lucide-react'
 import ProjectDetail from './ProjectDetail'
 
+interface DetailedProject {
+  id: string
+  title: string
+  subtitle: string
+  icon: string
+  description: string
+  fullDescription: string
+  technologies: string[]
+  features: string[]
+  challenges: string[]
+  outcomes: string[]
+  duration: string
+  teamSize: string
+  role: string
+}
+
 const About = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [selectedProject, setSelectedProject] = useState<DetailedProject | null>(null)
 
   return (
     <section id="about" className="h-screen flex items-center justify-center bg-gray-800 overflow-y-auto">
