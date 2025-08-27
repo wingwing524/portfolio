@@ -17,13 +17,33 @@ const Hero = () => {
   }
 
   const downloadCV = () => {
-    // You can replace this with the actual path to your CV
-    const link = document.createElement('a')
-    link.href = '/cv/Yam_Ho_Wing_CV.pdf' // Update this path when you add your CV
-    link.download = 'Yam_Ho_Wing_CV.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // Check if CV file exists and download it
+    const cvPath = '/cv/Yam_Ho_Wing_CV.pdf'
+    
+    // Create a temporary link to test if file exists
+    fetch(cvPath, { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          // File exists, proceed with download
+          const link = document.createElement('a')
+          link.href = cvPath
+          link.download = 'Yam_Ho_Wing_CV.pdf'
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+        } else {
+          // File doesn't exist, show message
+          alert('CV is currently being updated. Please contact me directly at howingyam0350@gmail.com for my latest resume.')
+        }
+      })
+      .catch(() => {
+        // Fallback: redirect to contact section
+        alert('CV download temporarily unavailable. Please contact me directly at howingyam0350@gmail.com')
+        const element = document.querySelector('#contact')
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      })
   }
 
   return (

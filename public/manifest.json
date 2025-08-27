@@ -1,0 +1,23 @@
+{
+  "name": "Yam Ho Wing - Business-Minded Developer Portfolio",
+  "short_name": "Yam Ho Wing",
+  "description": "Business-minded developer with project management expertise. Bridging technology and business objectives through innovative solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#51a2ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}

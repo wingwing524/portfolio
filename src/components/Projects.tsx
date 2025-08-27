@@ -1,18 +1,96 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { ExternalLink, Github } from 'lucide-react'
+import ProjectDetail from './ProjectDetail'
 
 const Projects = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [selectedProject, setSelectedProject] = useState<any>(null)
+
+  // Detailed project data for the two featured projects
+  const detailedProjects = [
+    {
+      id: 'iot-inventory',
+      title: 'IoT Inventory Management',
+      subtitle: 'RFID Technology',
+      icon: '📱',
+      description: 'RFID-based system for reagents, waste, and sample management. Collaborated with sensor manufacturers for scalable solutions.',
+      fullDescription: 'Designed and implemented an innovative IoT-based inventory management system using RFID technology for comprehensive tracking of laboratory reagents, waste materials, and samples. This project involved close collaboration with RFID sensor manufacturers to create a scalable, real-time monitoring solution that provides automated inventory tracking, expiration alerts, and usage analytics.',
+      technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'RFID Sensors', 'MQTT', 'Docker', 'AWS IoT'],
+      features: [
+        'Real-time RFID-based item tracking',
+        'Automated inventory level monitoring',
+        'Expiration date alerts and notifications',
+        'Usage analytics and reporting',
+        'Mobile app for inventory management',
+        'Integration with procurement systems'
+      ],
+      challenges: [
+        'Optimizing RFID reader performance in laboratory environments',
+        'Developing reliable sensor communication protocols',
+        'Creating scalable data processing for high-volume tracking',
+        'Ensuring system reliability in critical environments'
+      ],
+      outcomes: [
+        'Reduced inventory discrepancies by 95%',
+        'Decreased manual counting time by 80%',
+        'Prevented $50k+ in expired reagent waste',
+        'Improved compliance with regulatory requirements'
+      ],
+      duration: '6 months',
+      teamSize: '3 developers',
+      role: 'IoT Solutions Architect'
+    },
+    {
+      id: 'lis',
+      title: 'Laboratory Information System',
+      subtitle: 'Healthcare Technology',
+      icon: '🏥',
+      description: 'Comprehensive LIS with HL7 API integrations for healthcare analyzers. Streamlined workflows and improved data accuracy.',
+      fullDescription: 'Developed a comprehensive Laboratory Information System (LIS) from the ground up for healthcare facilities. This full-stack application features seamless HL7 API integrations with various healthcare analyzers, enabling real-time data exchange and automated result processing. The system streamlined laboratory workflows, reduced manual errors, and significantly improved data accuracy and reporting capabilities.',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'HL7 FHIR', 'Docker', 'Redis', 'TypeScript', 'Express.js'],
+      features: [
+        'Real-time HL7 integration with medical devices',
+        'Automated sample tracking and result processing',
+        'Comprehensive reporting and analytics dashboard',
+        'Role-based access control and audit trails',
+        'Barcode scanning for sample identification',
+        'Integration with hospital management systems'
+      ],
+      challenges: [
+        'Implementing complex HL7 message parsing and validation',
+        'Ensuring HIPAA compliance and data security',
+        'Managing real-time data synchronization across multiple analyzers',
+        'Creating a user-friendly interface for diverse user roles'
+      ],
+      outcomes: [
+        'Reduced manual data entry by 85%',
+        'Improved result turnaround time by 60%',
+        'Achieved 99.9% data accuracy',
+        'Successfully deployed in 3 healthcare facilities'
+      ],
+      duration: '8 months',
+      teamSize: '4 developers',
+      role: 'Lead Full Stack Developer'
+    }
+  ]
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce application with React, Node.js, and PostgreSQL. Features include user authentication, product management, and payment integration.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe"],
+      title: "IoT Inventory Management",
+      description: "RFID-based system for reagents, waste, and sample management. Collaborated with sensor manufacturers for scalable solutions.",
+      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "Python", "FastAPI", "RFID Sensors", "MQTT"],
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Laboratory Information System",
+      description: "Comprehensive LIS with HL7 API integrations for healthcare analyzers. Streamlined workflows and improved data accuracy.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "Node.js", "PostgreSQL", "HL7 FHIR", "Docker"],
       github: "#",
       live: "#"
     },
@@ -33,14 +111,6 @@ const Projects = () => {
       live: "#"
     },
     {
-      title: "Social Media Dashboard",
-      description: "A comprehensive social media analytics dashboard with data visualization, user engagement metrics, and automated reporting.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2315&q=80",
-      tech: ["Vue.js", "D3.js", "Express", "Redis"],
-      github: "#",
-      live: "#"
-    },
-    {
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS, featuring smooth animations and optimized performance.",
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
@@ -49,10 +119,10 @@ const Projects = () => {
       live: "#"
     },
     {
-      title: "API Documentation Tool",
-      description: "An interactive API documentation tool with live testing capabilities, code examples, and automated documentation generation.",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tech: ["React", "Monaco Editor", "Swagger", "Docker"],
+      title: "E-Commerce Platform",
+      description: "A full-stack e-commerce application with React, Node.js, and PostgreSQL. Features include user authentication, product management, and payment integration.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe"],
       github: "#",
       live: "#"
     }
@@ -100,7 +170,18 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 variants={itemVariants}
-                className="bg-gray-900/50 rounded-xl overflow-hidden border border-gray-700 hover:border-primary-500/50 transition-all duration-300 group"
+                className={`bg-gray-900/50 rounded-xl overflow-hidden border border-gray-700 hover:border-primary-500/50 transition-all duration-300 group ${
+                  (project.title === "Laboratory Information System" || project.title === "IoT Inventory Management") 
+                    ? "cursor-pointer hover:shadow-xl hover:shadow-primary-500/20" 
+                    : ""
+                }`}
+                onClick={() => {
+                  if (project.title === "IoT Inventory Management") {
+                    setSelectedProject(detailedProjects[0])
+                  } else if (project.title === "Laboratory Information System") {
+                    setSelectedProject(detailedProjects[1])
+                  }
+                }}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -119,6 +200,12 @@ const Projects = () => {
                   <p className="text-gray-400 mb-4 line-clamp-3">
                     {project.description}
                   </p>
+                  
+                  {(project.title === "Laboratory Information System" || project.title === "IoT Inventory Management") && (
+                    <p className="text-xs text-blue-400 mb-3 group-hover:text-blue-300 transition-colors">
+                      Click to view detailed case study →
+                    </p>
+                  )}
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
@@ -153,6 +240,12 @@ const Projects = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Project Detail Modal */}
+      <ProjectDetail 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
     </section>
   )
 }

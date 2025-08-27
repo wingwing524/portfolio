@@ -1,15 +1,28 @@
 {
-  "name": "portfolio",
+  "name": "yam-ho-wing-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Business-minded developer portfolio showcasing innovative solutions that bridge technology and business objectives",
+  "author": {
+    "name": "Yam Ho Wing",
+    "email": "howingyam0350@gmail.com",
+    "url": "https://yamhowing.dev"
+  },
+  "homepage": "https://yamhowing.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wingwing524/portfolio.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.11",
     "framer-motion": "^12.23.2",
     "lucide-react": "^0.525.0",

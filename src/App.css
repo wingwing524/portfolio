@@ -3,22 +3,24 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for main container */
-.scroll-container::-webkit-scrollbar {
-  width: 6px;
+/* Hide all scrollbars */
+.scroll-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-.scroll-container::-webkit-scrollbar-track {
-  background: rgba(31, 41, 55, 0.5);
+.scroll-container::-webkit-scrollbar { 
+  display: none; /* WebKit */
 }
 
-.scroll-container::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
-  border-radius: 3px;
+/* Hide scrollbars for any overflow content within sections */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.7);
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* Ensure sections take full viewport */
@@ -32,8 +34,6 @@ html {
 /* Smooth transitions for scroll snap */
 .snap-container {
   scroll-snap-type: y mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.5);
 }
 
 .snap-section {
@@ -44,4 +44,14 @@ html {
 /* Override any conflicting styles */
 * {
   scroll-margin-top: 0;
+}
+
+/* Ensure body and html don't show scrollbars */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
 }
