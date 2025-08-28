@@ -34,18 +34,16 @@ const Projects = () => {
       icon: '📱',
       description: 'RFID-based system for reagents, waste, and sample management. Collaborated with sensor manufacturers for scalable solutions.',
       fullDescription: 'Designed and implemented an innovative IoT-based inventory management system using RFID technology for comprehensive tracking of laboratory reagents, waste materials, and samples. This project involved close collaboration with RFID sensor manufacturers to create a scalable, real-time monitoring solution that provides automated inventory tracking, expiration alerts, and usage analytics.',
-      technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'RFID Sensors', 'MQTT', 'Docker', 'AWS IoT'],
+      technologies: ['React', 'Nodejs', 'PostgreSQL', 'RFID Sensors', 'MQTT', 'Docker', 'AWS IoT'],
       features: [
         'Real-time RFID-based item tracking',
         'Automated inventory level monitoring',
         'Expiration date alerts and notifications',
         'Usage analytics and reporting',
-        'Mobile app for inventory management',
-        'Integration with procurement systems'
       ],
       challenges: [
         'Optimizing RFID reader performance in laboratory environments',
-        'Developing reliable sensor communication protocols',
+        'Developing reliable sensor communication protocols based on manufacturer SDKs',
         'Creating scalable data processing for high-volume tracking',
         'Ensuring system reliability in critical environments'
       ],
@@ -55,9 +53,9 @@ const Projects = () => {
         'Prevented $50k+ in expired reagent waste',
         'Improved compliance with regulatory requirements'
       ],
-      duration: '6 months',
-      teamSize: '3 developers',
-      role: 'IoT Solutions Architect'
+      duration: '8 months',
+      teamSize: '1 developers',
+      role: 'Team Lead'
     },
     {
       id: 'lis',
@@ -84,12 +82,11 @@ const Projects = () => {
       outcomes: [
         'Reduced manual data entry by 85%',
         'Improved result turnaround time by 60%',
-        'Achieved 99.9% data accuracy',
-        'Successfully deployed in 3 healthcare facilities'
+        'High data accuracy',
       ],
-      duration: '8 months',
-      teamSize: '4 developers',
-      role: 'Lead Full Stack Developer'
+      duration: '1 year',
+      teamSize: '1 developers',
+      role: 'Team Lead'
     }
   ]
 
@@ -97,15 +94,15 @@ const Projects = () => {
     {
       title: "IoT Inventory Management",
       description: "RFID-based system for reagents, waste, and sample management. Collaborated with sensor manufacturers for scalable solutions.",
-      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tech: ["React", "Python", "FastAPI", "RFID Sensors", "MQTT"],
+      image: "/rfid.png",
+      tech: ["React", "Express", "RFID Sensors", "MQTT"],
       github: "#",
       live: "#"
     },
     {
       title: "Laboratory Information System",
       description: "Comprehensive LIS with HL7 API integrations for healthcare analyzers. Streamlined workflows and improved data accuracy.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "/laboratory.png",
       tech: ["React", "Node.js", "PostgreSQL", "HL7 FHIR", "Docker"],
       github: "#",
       live: "#"
@@ -121,7 +118,7 @@ const Projects = () => {
     {
       title: "Company Website",
       description: "A modern corporate website built with React and Strapi CMS. Features dynamic content management, responsive design, and seamless user experience for business operations.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      image: "/company.jpg",
       tech: ["React", "Strapi CMS", "JavaScript", "CSS", "REST API"],
       github: "#",
       live: "#"
@@ -130,7 +127,7 @@ const Projects = () => {
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Tailwind CSS, featuring smooth animations and optimized performance.",
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      tech: ["React", "TypeScript", "Tailwind CSS"],
       github: "#",
       live: "#"
     },
@@ -235,20 +232,28 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3 sm:gap-4">
-                    <a
-                      href={project.github}
-                      className="flex items-center gap-1 sm:gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-200"
-                    >
-                      <Github size={14} className="sm:w-4 sm:h-4" />
-                      <span className="text-xs sm:text-sm">Code</span>
-                    </a>
-                    <a
-                      href={project.live}
-                      className="flex items-center gap-1 sm:gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-200"
-                    >
-                      <ExternalLink size={14} className="sm:w-4 sm:h-4" />
-                      <span className="text-xs sm:text-sm">Live Demo</span>
-                    </a>
+                    {project.github && project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 sm:gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                      >
+                        <Github size={14} className="sm:w-4 sm:h-4" />
+                        <span className="text-xs sm:text-sm">Code</span>
+                      </a>
+                    )}
+                    {project.live && project.live !== "#" && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 sm:gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                      >
+                        <ExternalLink size={14} className="sm:w-4 sm:h-4" />
+                        <span className="text-xs sm:text-sm">Live Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
