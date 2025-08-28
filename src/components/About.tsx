@@ -26,17 +26,17 @@ const About = () => {
   const [selectedProject, setSelectedProject] = useState<DetailedProject | null>(null)
 
   return (
-    <section id="about" className="h-screen flex items-center justify-center bg-gray-800 overflow-y-auto">
-      <div className="container mx-auto px-6 max-w-7xl py-8">
+    <section id="about" className="min-h-screen bg-gray-800 pt-20 md:pt-24">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-4 text-white"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -77,11 +77,11 @@ const About = () => {
               className="space-y-6"
             >
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100 mb-4">
                   Business-Minded Developer 👋
                 </h3>
                 
-                <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+                <div className="space-y-4 text-gray-300 text-base md:text-lg leading-relaxed">
                   <p>
                     I'm a <span className="text-blue-400 font-semibold">Full Stack Developer</span> who loves turning 
                     complex business problems into elegant digital solutions. With 2+ years of experience, 

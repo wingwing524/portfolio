@@ -47,7 +47,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+    <section id="home" className="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden pt-16">
       <div className="container mx-auto px-6 text-center z-10 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Full Stack Developer
+            Software Engineer | Technical Engineer
           </motion.h2>
           
           {/* Decorative Line */}
