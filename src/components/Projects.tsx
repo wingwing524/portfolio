@@ -161,15 +161,15 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="min-h-screen bg-gray-800 pt-20 md:pt-24">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8">
+    <section id="projects" className="min-h-screen bg-gray-800 py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 text-primary-400">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 text-primary-400">
             Featured Projects
           </h2>
           
@@ -200,17 +200,17 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-primary-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-100 mb-2 sm:mb-3">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-100 mb-3">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base line-clamp-3">
+                  <p className="text-gray-400 mb-4 text-base line-clamp-3">
                     {project.description}
                   </p>
                   

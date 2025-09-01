@@ -13,22 +13,12 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-white">
       <ScrollProgress />
       <Navbar />
-      <main className="scroll-container snap-container overflow-y-scroll h-screen">
-        <section className="snap-section w-full h-screen">
-          <Hero />
-        </section>
-        <section className="snap-section w-full h-screen">
-          <About />
-        </section>
-        <section className="snap-section w-full h-screen">
-          <Skills />
-        </section>
-        <section className="snap-section w-full h-screen">
-          <Projects />
-        </section>
-        <section className="snap-section w-full h-screen">
-          <Contact />
-        </section>
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
       <FloatingSocial />
     </div>

@@ -82,8 +82,8 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="min-h-screen bg-gray-900 pt-20 md:pt-24">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8">
+    <section id="contact" className="min-h-screen bg-gray-900 py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -101,7 +101,7 @@ const Contact = () => {
               Let's Build Something Great Together
             </motion.h2>
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-blue-400 to-[#51a2ff] mx-auto rounded-full mb-6"
+              className="w-24 h-1 bg-gradient-to-r from-blue-400 to-[#51a2ff] mx-auto rounded-full"
               initial={{ width: 0, opacity: 0 }}
               animate={isInView ? { width: 96, opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -109,54 +109,54 @@ const Contact = () => {
            
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 flex-1">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-100 mb-2 sm:mb-3">
                     Let's connect and collaborate
                   </h3>
-                  <p className="text-gray-400 text-base md:text-lg mb-6">
+                  <p className="text-gray-400 text-xs sm:text-sm md:text-base mb-2 sm:mb-3 md:mb-4">
                     As a business-minded developer with project management expertise, I'm passionate about creating innovative solutions that drive real business value. I'm interested in:
                   </p>
                   
-                  <div className="space-y-2 md:space-y-3 mb-6">
-                    <div className="flex items-center gap-3 text-gray-300 text-sm md:text-base">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                  <div className="space-y-1 sm:space-y-2 mb-2 sm:mb-3 md:mb-4">
+                    <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
                       <span>Full-time opportunities in dynamic teams</span>
                     </div>
-                    <div className="flex items-center gap-3 text-gray-300 text-sm md:text-base">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                    <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
                       <span>Collaborative development projects</span>
                     </div>
-                    <div className="flex items-center gap-3 text-gray-300 text-sm md:text-base">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                    <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
                       <span>Technical discussions and knowledge sharing</span>
                     </div>
-                    <div className="flex items-center gap-3 text-gray-300 text-sm md:text-base">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                    <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
                       <span>Networking with like-minded professionals</span>
                     </div>
                   </div>
                   
                 </div>
                 
-                <div className="space-y-3 md:space-y-4">
+                <div className="space-y-2 sm:space-y-3">
                   {contactInfo.map((info) => (
                     <motion.a
                       key={info.title}
                       href={info.href}
-                      className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:bg-gray-800/70 hover:border-blue-400/30 transition-all duration-300 group"
+                      className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:bg-gray-800/70 hover:border-blue-400/30 transition-all duration-300 group"
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className="p-2 md:p-3 bg-gradient-to-r from-blue-500/20 to-[#51a2ff]/20 rounded-lg group-hover:from-blue-500/30 group-hover:to-[#51a2ff]/30 transition-all duration-300">
-                        <info.icon className="text-blue-400 group-hover:text-blue-300" size={20} />
+                      <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-500/20 to-[#51a2ff]/20 rounded-lg group-hover:from-blue-500/30 group-hover:to-[#51a2ff]/30 transition-all duration-300">
+                        <info.icon className="text-blue-400 group-hover:text-blue-300" size={16} />
                       </div>
                       <div className="min-w-0 flex-1">
                         <h4 className="text-gray-100 font-medium group-hover:text-white transition-colors duration-200 text-sm md:text-base">{info.title}</h4>
@@ -174,13 +174,13 @@ const Contact = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 md:p-8">
-                <div className="mb-4 md:mb-6">
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-100 mb-2">Get in touch</h3>
-                  <p className="text-gray-400 text-sm">I'd love to hear from you. Let's start a conversation!</p>
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 lg:space-y-6 bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-3 md:p-6 lg:p-8">
+                <div className="mb-3 md:mb-4 lg:mb-6">
+                  <h3 className="text-base md:text-lg lg:text-xl font-semibold text-gray-100 mb-2">Get in touch</h3>
+                  <p className="text-gray-400 text-xs md:text-sm">I'd love to hear from you. Let's start a conversation!</p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
                       Name *

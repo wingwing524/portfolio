@@ -52,7 +52,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-2 left-4 right-4 z-40 transition-all duration-500 ${
+      className={`fixed top-4 left-4 right-4 z-40 transition-all duration-500 ${
         isScrolled 
           ? 'bg-gray-900/80 backdrop-blur-md shadow-2xl border border-gray-700/50' 
           : 'bg-gray-900/20 backdrop-blur-sm border border-gray-600/20'

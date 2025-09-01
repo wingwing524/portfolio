@@ -78,8 +78,8 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="min-h-screen bg-gray-900 pt-20 md:pt-24">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8">
+    <section id="skills" className="min-h-screen bg-gray-900 py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -103,7 +103,7 @@ const Skills = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             />
             <motion.p
-              className="text-gray-100 text-lg max-w-2xl mx-auto"
+              className="text-gray-100 text-base md:text-lg max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -119,39 +119,39 @@ const Skills = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-16"
           >
-            <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8">
-              <div className="p-1.5 md:p-2 bg-primary-500/20 rounded-lg">
-                <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-primary-400" />
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+              <div className="p-1 sm:p-1.5 bg-primary-500/20 rounded-lg">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white">Frequently Used Technologies</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Frequently Used Technologies</h3>
             </div>
             
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4"
             >
               {frequentSkills.map((category, categoryIndex) => (
                 <motion.div
                   key={category.category}
                   variants={itemVariants}
-                  className={`bg-gray-800/50 backdrop-blur-sm border ${category.borderColor} p-4 md:p-6 rounded-xl hover:border-opacity-60 transition-all duration-300 group`}
+                  className={`bg-gray-800/50 backdrop-blur-sm border ${category.borderColor} p-2 sm:p-3 md:p-4 rounded-xl hover:border-opacity-60 transition-all duration-300 group`}
                 >
                   {/* Category Header */}
-                  <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-                    <div className={`p-1.5 md:p-2 bg-gradient-to-r ${category.color} bg-opacity-20 rounded-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                    <div className={`p-1 sm:p-1.5 bg-gradient-to-r ${category.color} bg-opacity-20 rounded-lg group-hover:scale-110 transition-transform duration-300`}>
                       <div className="text-white">
                         {category.icon}
                       </div>
                     </div>
-                    <h4 className="text-base md:text-lg font-semibold text-white group-hover:text-primary-300 transition-colors duration-300 truncate">
+                    <h4 className="text-xs sm:text-sm md:text-base font-semibold text-white group-hover:text-primary-300 transition-colors duration-300 truncate">
                       {category.category}
                     </h4>
                   </div>
                   
                   {/* Skills List */}
-                  <div className="space-y-3 md:space-y-4">
+                  <div className="space-y-1 sm:space-y-2">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div
                         key={skill.name}
@@ -163,10 +163,10 @@ const Skills = () => {
                         }}
                         className="group/skill"
                       >
-                        <div className="flex items-center justify-between mb-1.5 md:mb-2">
-                          <div className="flex items-center gap-1.5 md:gap-2 min-w-0 flex-1">
-                            <span className="text-sm md:text-lg flex-shrink-0">{skill.icon}</span>
-                            <span className="text-gray-100 font-medium group-hover/skill:text-white transition-colors duration-200 text-sm md:text-base truncate">
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="flex items-center gap-1 min-w-0 flex-1">
+                            <span className="text-xs sm:text-sm flex-shrink-0">{skill.icon}</span>
+                            <span className="text-gray-100 font-medium group-hover/skill:text-white transition-colors duration-200 text-xs sm:text-sm truncate">
                               {skill.name}
                             </span>
                           </div>
